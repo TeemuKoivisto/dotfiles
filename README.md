@@ -8,7 +8,7 @@ My favorite editor. I don't have a lot of settings but the ones I have I'm not c
 
 ## User settings
 
-Code > Preferences > Settings
+Code > Preferences > Settings  
 Then click three dots and `Open settings.json`.
 ```json
 // Place your settings in this file to overwrite the default settings
@@ -38,9 +38,19 @@ You need to install Fira Code in order it to work. https://github.com/tonsky/Fir
 
 TODO: add force `LF`-endings.
 
+## Extensions
+
+* Docker
+* VS Live Share
+* nginx.conf hint
+* Code Spell Checker
+* vscode-styled-components
+* TSLint
+* Import Cost
+
 ## Keyboard shortcuts
 
-Code > Preferences > Keyboard shortcuts
+Code > Preferences > Keyboard shortcuts  
 Click `keybindings.json`.
 ```json
 // Place your key bindings in this file to overwrite the defaults
