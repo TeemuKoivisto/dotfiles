@@ -11,7 +11,6 @@ My favorite editor. I don't have a lot of settings but the ones I have I'm not c
 Code > Preferences > Settings  
 Then click three dots and `Open settings.json`.
 ```json
-// Place your settings in this file to overwrite the default settings
 {
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
@@ -28,15 +27,15 @@ Then click three dots and `Open settings.json`.
     "editor.fontFamily": "'Fira Code'",
     "editor.fontLigatures": true,
     "editor.fontWeight": "100",
+    "editor.wordWrap": "on",
     "terminal.integrated.fontFamily": "monospace",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100,
+    "files.eol": "\n",
     "breadcrumbs.enabled": true
 }
 ```
 You need to install Fira Code in order it to work. https://github.com/tonsky/FiraCode
-
-TODO: add force `LF`-endings.
 
 ## Extensions
 
@@ -106,7 +105,9 @@ My `.gitconfig` currently:
 [user]
 	name = Teemu Koivisto
 	useConfigOnly = true
-
+[core]
+        autocrlf = false # NO CRLF in Windows
+        eol = lf # Force LF line endings
 [credential "https://git-codecommit.*.amazonaws.com"]
     helper = !aws codecommit credential-helper $@ 
     UseHttpPath = true
@@ -119,8 +120,6 @@ My `.gitconfig` currently:
 I think osxkeychain is macOS only. Maybe there's some magic here that I've used and forgot. Oh well.
 
 That `lg` is super cool, try it `git lg`.
-
-TODO: also add force `LF`-endings in Windows.
 
 # SSH
 
