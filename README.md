@@ -16,12 +16,10 @@ Then click three dots and `Open settings.json`.
     "window.zoomLevel": 0,
     "search.exclude": {
         "**/node_modules": true,
-        "**/bower_components": false
+        "**/bower_components": true
     },
     "extensions.ignoreRecommendations": false,
-    "python.disablePromptForFeatures": [
-      "pylint"
-    ],
+    "python.linting.pylintEnabled": false,
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
     "editor.fontFamily": "'Fira Code'",
