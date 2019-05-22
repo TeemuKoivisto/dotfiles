@@ -58,9 +58,30 @@ Click `keybindings.json`.
 
 # Bash
 
-`.bashrc` Should be located in `~/.bashrc`.
+`.bashrc` (or `.bash_profile` in macOS since `.bashrc` is not loaded automatically..). Should be located in `~/.bashrc`.
 ```
-function tar-help() {
+ds() {
+  du -hd1
+}
+
+.env() {
+  env $(cat .env | xargs)
+}
+
+rm-images() {
+  local GREP_STRING=$1
+  rm-containers "${GREP_STRING}"
+  docker images | grep "${GREP_STRING}" | awk '{print $3}' | xargs docker rmi -f
+}
+
+rm-containers() {
+  local GREP_STRING=$1
+  OLD_CONTAINER_ID="$(docker ps -a | grep ${GREP_STRING} | awk '{print $1}')"
+  docker stop "${OLD_CONTAINER_ID}" || true
+  docker rm -f "${OLD_CONTAINER_ID}" || true
+}
+
+tar-help() {
 cat << EOF
 
 tar
@@ -82,8 +103,10 @@ The files will be extracted in the current folder (most of the times in a folder
 
 EOF
 }
+
+ssh-add ~/.ssh/github-oma ~/.ssh/github-ws > /dev/null 2>&1
 ```
-Now there should be `tar-info` command available in command line as I can't for the love of God remember those tar flags.
+Now each of those functions should be available from the command line eg `tar-info` and also ssh-agent should automatically load the two ssh-keys I have specified (which you should change accordingly). Loading all keys from `.ssh` is not probably smart.
 
 # Git
 
@@ -143,7 +166,7 @@ output=json
 
 ## Terminal
 
-Makes the typing speed bearable in macOS (the default speed is sooper slow).
+Makes the typing speed bearable in macOS (the default speed is sooper slow). You have to log out to see the effects.
 ```
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
@@ -151,13 +174,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 ## System settings
 
-Näppäimistö > text > käytä älykkäitä hipsuja jne POIS
-
-Ohjauslevy: Disable älykäs zoom
-
-Sitten estä ettei workspaceja ei voi liikuttaa
-
-Ja että Super + Q ei lopeta ohjelmaa
-
-TODO: translate
-
+* `Keyboard > Text > untick "Use smart quotes and dashes"` because they are annoying as hell and useless
+* `Keyboard > Shortcuts > tick "Invert colors" and double-click the shortcut > assign it to Cmd+Q` because it's such fun when you accidentally close your browser [source](https://apple.stackexchange.com/questions/78948/how-to-disable-command-q-for-quit)
+* `Mission Control > untick "Automatically rearrange Spaces based on most recent use"` so annoying...
+* `Trackpad > untick "Smart Zoom" and optionally "Scroll direction: Natural"` smart zoom is just useless and I don't know about the scrolling direction. Ehh.
