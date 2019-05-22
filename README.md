@@ -164,6 +164,8 @@ output=json
 
 # macOS
 
+Install [Homebrew](https://brew.sh/) and probably as well aws-cli, nvm & Node.js, Python 3, Sceptre, Docker, VSCode, Chrome and other apps I can't think of now.
+
 ## Terminal
 
 Makes the typing speed bearable in macOS (the default speed is sooper slow). You have to log out to see the effects.
@@ -174,6 +176,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 ## System settings
 
+* `Keyboard > tick "Use F1, F2 etc. keys as standard function keys"` if not already ticked. This enables the use of workspaces etc
 * `Keyboard > Text > untick "Use smart quotes and dashes"` because they are annoying as hell and useless
 * `Keyboard > Shortcuts > tick "Invert colors" and double-click the shortcut > assign it to Cmd+Q` because it's such fun when you accidentally close your browser [source](https://apple.stackexchange.com/questions/78948/how-to-disable-command-q-for-quit)
 * `Mission Control > untick "Automatically rearrange Spaces based on most recent use"` so annoying...
