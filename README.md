@@ -64,10 +64,6 @@ ds() {
   du -hd1
 }
 
-.env() {
-  env $(cat .env | xargs)
-}
-
 rm-images() {
   local GREP_STRING=$1
   rm-containers "${GREP_STRING}"
@@ -149,7 +145,7 @@ Inside `~/.ssh` folder I've often used `config`-file like this:
 Host github
   HostName github.com
   User git
-  IdentityFile ~/.ssh/github
+  IdentityFile ~/.ssh/github-oma
 ```
 Keys I think I've generated with default settings: `ssh-keygen`.
 
