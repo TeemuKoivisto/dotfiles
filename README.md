@@ -112,7 +112,10 @@ Now each of those functions should be available from the command line eg `tar-in
 These two are for having two Github accounts with separate keys. Setting the email per git-project will keep the accounts separated:
 
 This is true by default in macOS which will cause immensely frustrating bugs.
+
 `git config --global core.ignorecase false`
+
+And when you do mess up, you need to remove the cached file first by eg: `git rm -r --cached ./src/routes.tsx`
 
 ## Require setting user.name and email per-repo:
 `git config --global user.useConfigOnly true`
