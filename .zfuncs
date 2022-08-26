@@ -1,0 +1,5 @@
+ssh_add () {
+  ssh-add ~/.ssh/github
+  ssh-add ~/.ssh/gitlab
+  ssh-add ~/.ssh/teemukoiv
+}
