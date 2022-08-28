@@ -1,5 +1,7 @@
 ssh_add () {
-  ssh-add ~/.ssh/github
-  ssh-add ~/.ssh/gitlab
-  ssh-add ~/.ssh/teemukoiv
+  grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+}
+
+yt () {
+  yt-dlp -f 'ba' -x --audio-format mp3 "$1"  -o '%(id)s.%(ext)s'
 }
