@@ -16,6 +16,10 @@
 * Firefox
 * Docker
 * Ableton
+* android file-transfer
+* vlc
+* synthesia
+* canon utilities
 
 # MacOS
 
