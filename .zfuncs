@@ -5,3 +5,11 @@ ssh_add () {
 yt () {
   yt-dlp -f 'ba' -x --audio-format mp3 "$1"  -o '%(id)s.%(ext)s'
 }
+
+cptmp () {
+  rsync -a ./tmp/ hetzner:/home/teemu/.files/$1
+}
+
+sshkey () {
+  ssh-keygen -t rsa -b 4096
+}
