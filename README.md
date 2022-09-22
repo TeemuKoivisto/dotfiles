@@ -1,6 +1,6 @@
-# My Development Environment
+# My dotfiles
 
-I noticed that I had not documented my settings in any way which might be a good idea were I to switch laptops etc.
+It seems what I am doing here is called dotfiles, will refactor the setup to some common standard one day.
 
 # VSCode
 
